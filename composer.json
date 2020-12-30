@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "GenericSQLFormat\\": "GenericSQLFormat/src"
+      "GenericSQLFormat\\": "src"
     }
   }
 }
