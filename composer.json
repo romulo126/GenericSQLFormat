@@ -1,5 +1,5 @@
 {
-  "name": "GenericSQLFormat",
+  "name": "GenericSQLFormat/Query",
   "type": "library",
   "description": "GenericSQLFormat is helps generate SQL for query",
   "license": "MIT",
