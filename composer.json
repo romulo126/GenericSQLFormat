@@ -1,4 +1,18 @@
 {
+  "name": "GenericSQLFormat",
+  "type": "library",
+  "description": "GenericSQLFormat is helps generate SQL for query",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Romulo Henrique",
+      "email": "romulohenrique126@hotmail.com",
+      "homepage": "https://github.com/romulo126"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },,
   "autoload": {
     "psr-4": {
       "GenericSQLFormat\\": "GenericSQLFormat/src"
