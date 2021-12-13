@@ -14,8 +14,6 @@
 use GenericSQLFormat\Conect\Conect;
 use GenericSQLFormat\Where\Where;
 
-require_once __DIR__ . '/../Autoload.php';
-
 class Update extends Conect
 {
     private $from;
