@@ -1,5 +1,5 @@
 {
-    "name":"romulo126/genericsqlformat",
+    "name":"sql/genericsqlformat",
     "description": "SQL helper, Generic SQL Format",
     "type": "lib",
     "license": "MIT",

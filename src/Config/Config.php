@@ -17,7 +17,7 @@ class Config
 {
     private $host = "127.0.0.1";
     private $user = "postgres";
-    private $password = "30051006";
+    private $password = "postgres";
     private $databasename = "postgres";
     private $port = 5432;// 5432 (PostgreSQL), 3306 (MySQL), 1521 (Oracle)
     private $driver = "pgsql"; //mysql, pgsql, sqlite, sqlsrv, oci, mssql, dblib, oracle, 

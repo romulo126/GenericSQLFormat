@@ -1,6 +1,7 @@
 # PHP Generic Query SQL
 
-composer require romulo126/genericsqlformat
+## Composer Install
+    composer require romulo126/genericsqlformat
 
 ## Description
     simple query generator for PHP
@@ -11,13 +12,36 @@ composer require romulo126/genericsqlformat
 
 ## Usage
 
+- Config
+
+    ```php
+    <?php
+        require_once __DIR__.'vendor/autoload.php';
+
+        //library
+        use sql\genericsqlformat\Config\Config;
+
+        //config
+        $config = new Config();
+        $config->setHost('localhost');
+        $config->setUser('root');
+        $config->setPassword('root');
+        $config->setDataBaseName('test');
+        $config->setPort(5432);
+        $config->setDriver('pgsql');
+
+        $config->getDsn();
+    ?>
+    ```
+
+
 - Select:
     ```php
     <?php
         require_once __DIR__.'vendor/autoload.php';
 
         //library
-        use GenericSQLFormat\Select\Select;
+        use sql\genericsqlformat\Select\Select;
 
         //query
         //enable debug mode
@@ -39,7 +63,7 @@ composer require romulo126/genericsqlformat
         require_once __DIR__.'vendor/autoload.php';
 
         //library
-        use GenericSQLFormat\Update\Update;
+        use sql\genericsqlformat\Update\Update;
 
         //query
         //enable debug mode
@@ -60,7 +84,7 @@ composer require romulo126/genericsqlformat
         require_once __DIR__.'vendor/autoload.php';
 
         //library
-        use GenericSQLFormat\Insert\Insert;
+        use sql\genericsqlformat\Insert\Insert;
 
         //query
         //enable debug mode
@@ -78,7 +102,7 @@ composer require romulo126/genericsqlformat
         require_once __DIR__.'vendor/autoload.php';
 
         //library
-        use GenericSQLFormat\Delete\Delete;
+        use sql\genericsqlformat\Delete\Delete;
 
         //query
         //enable debug mode
