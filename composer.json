@@ -1,0 +1,20 @@
+{
+    "name":"romulo126/genericsqlformat",
+    "description": "SQL helper, Generic SQL Format",
+    "type": "lib",
+    "license": "MIT",
+    "authors": [
+                {
+                    "name": "Romulo Henrique D S",
+                    "email": "romulohenrique126@hotmail.com"
+                }
+            ],
+    "autoload": {
+        "psr-4": {
+            "GenericSQLFormat\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
