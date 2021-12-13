@@ -1,5 +1,7 @@
 # PHP Generic Query SQL
 
+composer require romulo126/genericsqlformat
+
 ## Description
     simple query generator for PHP
 
