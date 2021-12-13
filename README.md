@@ -1,7 +1,7 @@
 # PHP Generic Query SQL
 
 ## Composer Install
-    composer require romulo126/genericsqlformat
+    composer require sql/genericsqlformat
 
 ## Description
     simple query generator for PHP
