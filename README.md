@@ -16,6 +16,14 @@
     - Composer
     - ENVIRONMENT VARIABLES
 
+## ENVIRONMENT VARIABLES
+    - GENERICSQLFORMAT_HOST
+    - GENERICSQLFORMAT_USER
+    - GENERICSQLFORMAT_PASSWORD
+    - GENERICSQLFORMAT_DATABASENAME
+    - GENERICSQLFORMAT_PORT // 5432 (PostgreSQL), 3306 (MySQL), 1521 (Oracle)
+    - GENERICSQLFORMAT_DRIVE //mysql, pgsql, sqlite, sqlsrv, oci, mssql, dblib, oracle,
+
 ## Usage
 
 
@@ -55,7 +63,7 @@
         //no debug mode
             $update = new Update();
         $update->setFrom('users');
-        $update->setColumns(['id' => 1,'nameuser'=>'teste']);
+        $update->setColumnsSet(['id' => 1,'nameuser'=>'teste']);
         $update->setWhere(['id' => 1,'nameuser'=>'teste'],['nameuser'=>'=','id'=>'like'], ['OR']);
         $update->run();
     ?>
