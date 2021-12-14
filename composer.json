@@ -1,6 +1,8 @@
 {
     "name":"sql/genericsqlformat",
     "description": "SQL helper, Generic SQL Format",
+    "homepage": "https://github.com/romulo126/GenericSQLFormat",
+    "keywords": ["sql", "SQL helper", "Generic SQL Format", "Generic SQL", "Generic", "SQL Format", "SQL"],
     "type": "lib",
     "license": "MIT",
     "authors": [

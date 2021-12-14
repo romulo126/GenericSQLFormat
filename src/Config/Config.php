@@ -15,48 +15,23 @@ namespace sql\genericsqlformat\Config;
 
 class Config
 {
-    private $host = "127.0.0.1";
-    private $user = "postgres";
-    private $password = "postgres";
-    private $databasename = "postgres";
-    private $port = 5432;// 5432 (PostgreSQL), 3306 (MySQL), 1521 (Oracle)
-    private $driver = "pgsql"; //mysql, pgsql, sqlite, sqlsrv, oci, mssql, dblib, oracle, 
+    private $host;
+    private $user ;
+    private $password ;
+    private $databasename ;
+    private $port ;// 5432 (PostgreSQL), 3306 (MySQL), 1521 (Oracle)
+    private $driver ; //mysql, pgsql, sqlite, sqlsrv, oci, mssql, dblib, oracle, 
 
     public function __construct()
     {
+        $this->host = getenv('GENERICSQLFORMAT_HOST');
+        $this->user = getenv('GENERICSQLFORMAT_USER');
+        $this->password = getenv('GENERICSQLFORMAT_PASSWORD');
+        $this->databasename = getenv('GENERICSQLFORMAT_DATABASENAME');
+        $this->port = intval(getenv('GENERICSQLFORMAT_PORT'));// 5432 (PostgreSQL), 3306 (MySQL), 1521 (Oracle)
+        $this->driver = getenv('GENERICSQLFORMAT_DRIVE'); //mysql, pgsql, sqlite, sqlsrv, oci, mssql, dblib, oracle,
+
     }
-
-    public function setHost(string $host)
-    {
-        $this->host = $host;
-    }
-
-    public function setUser(string $user)
-    {
-        $this->user = $user;
-    }
-
-    public function setPassword(string $password)
-    {
-        $this->password = $password;
-    }
-
-    public function setDataBaseName(string $database)
-    {
-        $this->databasename = $database;
-    }
-
-    public function setPort(int $port)
-    {
-        $this->port = $port;
-    }
-
-
-    public function setDriver(string $driver)
-    {
-        $this->driver = $driver;
-    }
-
     public function getHost()
     {
         return $this->host;
