@@ -9,30 +9,14 @@
 ## OBS:
 - All classes have manualQueryBuilder() method where you can pass a string with the query
 - The database connection settings are in the Config folder in the Config.php file
+- If you don't want to use environment edit the config file
+
+## Required
+    - PHP 7.0+
+    - Composer
+    - ENVIRONMENT VARIABLES
 
 ## Usage
-
-- Config
-
-    ```php
-    <?php
-        require_once __DIR__.'vendor/autoload.php';
-
-        //library
-        use sql\genericsqlformat\Config\Config;
-
-        //config
-        $config = new Config();
-        $config->setHost('localhost');
-        $config->setUser('root');
-        $config->setPassword('root');
-        $config->setDataBaseName('test');
-        $config->setPort(5432);
-        $config->setDriver('pgsql');
-
-        $config->getDsn();
-    ?>
-    ```
 
 
 - Select:
