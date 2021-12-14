@@ -71,6 +71,12 @@ class Select extends Conect
 
     public function run()
     {
+        if($this->debug)
+        {
+            echo "\n";
+            echo $this->getQuery();
+            echo "\n";
+        }
 
         $this->query = $this->conect->prepare($this->getQuery());
         if ($this->where->getWhere()) {
