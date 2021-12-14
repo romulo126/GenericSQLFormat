@@ -11,7 +11,7 @@
 # Copyright (c) 2020 Romulo Henrique D. S.
 ##################################################
 
-namespace GenericSQLFormat\Config;
+namespace sql\genericsqlformat\Config;
 
 class Config
 {

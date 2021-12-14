@@ -11,7 +11,9 @@
 # Copyright (c) 2020 Romulo Henrique D. S.
 ##################################################
 
-use GenericSQLFormat\Conect\Conect;
+namespace sql\genericsqlformat\Insert;
+
+use sql\genericsqlformat\Conect\Conect;
 
 class Insert extends Conect
 {
