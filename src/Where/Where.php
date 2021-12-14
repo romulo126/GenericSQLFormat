@@ -32,13 +32,19 @@ class Where extends Conect
 
         $this->where = implode(' ', array_map(function ($value, $key, $operator, $operatorkey, $logics) {
             if (is_numeric($operatorkey)) {
-                $this->arrayValues[":" . $key . 'GenericSQLFormatWhere'] = $value;
-                $keyoperation = ":" . $key . 'GenericSQLFormatWhere';
-                return ' ' . $key . ' ' . $operator .' '. $keyoperation . ' ' . $logics;
+                if (!empty($value)) {
+                    $this->arrayValues[":" . $key . 'GenericSQLFormatWhere'] = $value;
+                    $keyoperation = ":" . $key . 'GenericSQLFormatWhere';
+                    return ' ' . $key . ' ' . $operator . ' ' . $keyoperation . ' ' . $logics;
+                }
+                return ' ' . $key . ' ' . $operator . ' null' . ' ' . $logics;
             } else {
-                $this->arrayValues[':' . $operatorkey . 'GenericSQLFormatWhere'] = $value;
-                $keyoperation = ":" . $operatorkey . 'GenericSQLFormatWhere';
-                return ' ' . $operatorkey . ' ' . $operator .' '. $keyoperation . ' ' . $logics;
+                if (!empty($value)) {
+                    $this->arrayValues[':' . $operatorkey . 'GenericSQLFormatWhere'] = $value;
+                    $keyoperation = ":" . $operatorkey . 'GenericSQLFormatWhere';
+                    return ' ' . $operatorkey . ' ' . $operator . ' ' . $keyoperation . ' ' . $logics;
+                }
+                return ' ' . $operatorkey . ' ' . $operator . ' null'  . ' ' . $logics;
             }
         }, $wherevalues, $wherekeysvalues, $whereoperators, $wherekeysoperators, $wherelogics));
     }
