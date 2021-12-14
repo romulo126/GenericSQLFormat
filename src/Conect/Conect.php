@@ -11,11 +11,11 @@
 # Copyright (c) 2020 Romulo Henrique D. S.
 ##################################################
 
-namespace GenericSQLFormat\Conect;
+namespace sql\genericsqlformat\Conect;
 
 use \PDO;
 
-use GenericSQLFormat\Config\Config;
+use sql\genericsqlformat\Config\Config;
 
 class Conect extends Config
 {

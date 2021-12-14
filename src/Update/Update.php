@@ -11,8 +11,10 @@
 # Copyright (c) 2020 Romulo Henrique D. S.
 ##################################################
 
-use GenericSQLFormat\Conect\Conect;
-use GenericSQLFormat\Where\Where;
+namespace sql\genericsqlformat\Update;
+
+use sql\genericsqlformat\Conect\Conect;
+use sql\genericsqlformat\Where\Where;
 
 class Update extends Conect
 {

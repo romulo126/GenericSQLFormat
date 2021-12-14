@@ -11,9 +11,9 @@
 # Copyright (c) 2020 Romulo Henrique D. S.
 ##################################################
 
-namespace GenericSQLFormat\Where;
+namespace sql\genericsqlformat\Where;
 
-use GenericSQLFormat\Conect\Conect;
+use sql\genericsqlformat\Conect\Conect;
 
 class Where extends Conect
 {
