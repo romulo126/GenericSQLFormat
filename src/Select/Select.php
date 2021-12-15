@@ -3,8 +3,8 @@
 # Description: This file contains the Select class.
 ##################################################
 # Authot: Romulo Henrique D. S.
-# Version: 1.0
-# Date: 2021/12/11
+# Version: 2.0
+# Date: 2021/12/12
 # GitHub: https://github.com/romulo126/
 # LinkedIn: https://www.linkedin.com/in/romulo-henrique-364976133/
 ##################################################
@@ -20,15 +20,16 @@ use sql\genericsqlformat\Where\Where;
 
 class Select extends Conect
 {
-    private $from;
-    private $columns;
-    private $where;
-    private $order;
-    private $limit;
-    private $group;
-    private $query;
-    private $conect;
-    private $debug;
+    private $from = false;
+    private $columns = false;
+    private $where = false;
+    private $order = false;
+    private $limit = false;
+    private $group = false;
+    private $query = false;
+    private $conect = false;
+    private $debug = false;
+    private $joinfrom = false;
 
     public function __construct($debug = false)
     {
@@ -69,10 +70,26 @@ class Select extends Conect
         $this->group = implode(', ', $group);
     }
 
+    public function setJoin(string $typejoin, string $fromjoin, string $onjoin = null)
+    {
+        if (!is_null($onjoin)) {
+            if (strtoupper($typejoin) == strtoupper('JOIN')) {
+                $this->joinfrom .= ' ' . strtoupper($typejoin) . ' ' . $fromjoin . ' ON ' . $onjoin;
+            } else {
+                $this->joinfrom .= ' ' . strtoupper($typejoin) . ' JOIN ' . $fromjoin . ' ON ' . $onjoin;
+            }
+        } else {
+            if (strtoupper($typejoin) == strtoupper('JOIN')) {
+                $this->joinfrom .= ' ' . strtoupper($typejoin) . ' ' . $fromjoin;
+            } else {
+                $this->joinfrom .= ' ' . strtoupper($typejoin) . ' JOIN ' . $fromjoin;
+            }
+        }
+    }
+
     public function run()
     {
-        if($this->debug)
-        {
+        if ($this->debug) {
             echo "\n";
             echo $this->getQuery();
             echo "\n";
@@ -108,6 +125,9 @@ class Select extends Conect
     public function getQuery()
     {
         $query = "SELECT $this->columns FROM $this->from";
+        if ($this->joinfrom) {
+            $query .= $this->joinfrom;
+        }
         if ($this->where->getWhere()) {
             $query .= " WHERE" . $this->where->getWhere();
         }
