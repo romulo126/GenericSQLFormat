@@ -49,6 +49,32 @@
         $select->run();
     ?>
     ```
+- Select Join
+    ```php
+    <?php
+        require_once __DIR__.'vendor/autoload.php';
+
+        //library
+        use sql\genericsqlformat\Select\Select;
+
+        //query
+        //enable debug mode
+            $select = new Select(true);
+        //no debug mode
+            $select = new Select();
+        $select->setFrom('users');
+        $select->setColumns(['id', 'nameuser']);
+        $select->setJoin('LEFT','users_groups', 'users.id = users_groups.id_user');
+        $select->setJoin('FULL','users_groups', 'users.id = users_groups.id_user');
+        $select->setJoin('RIGHT','users_groups', 'users.id = users_groups.id_user');
+        $select->setJoin('INNER','users_groups', 'users.id = users_groups.id_user');
+        $select->setWhere(['id' => 1,'nameuser'=>'teste'],['nameuser'=>'=','id'=>'like'], ['OR']);
+        $select->setGroup(['id']);
+        $select->setOrder(['id']);
+        $select->setLimit(1);
+        $select->run();
+    ?>
+    ```
 - Update:
     ```php
     <?php
