@@ -25,6 +25,7 @@ class Conect extends Config
     public function __construct()
     {
         try{
+            parent::__construct();
             $this->pdo = new PDO(
             $this->getDsn(),
             $this->getUser(),
